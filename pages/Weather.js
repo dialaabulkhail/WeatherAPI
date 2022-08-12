@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 const Weather = ({ data }) => {
-  console.log(data.name);
+
   return (
     <div className="relative">
       <div className="p-5 rounded-md bg-white/20">
