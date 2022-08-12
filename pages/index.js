@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Weather from "./components/Weather";
+import Weather from "./Weather";
 import Image from "next/image";
 import { BsSearch } from "react-icons/bs";
 
@@ -9,22 +9,20 @@ const Index = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState({});
 
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bef28bda6117928f24255ad0672bf1bd`
   
   const handleSearach = (e) => {
     e.preventDefault();
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bef28bda6117928f24255ad0672bf1bd
-  `
-      )
+    axios.get(url)
       .then((response) => {
         setWeatherData(response.data);
-        setCity("");
+        
       })
       .catch((error) => {
         console.log(error);
         alert("Please enter a valid city name..");
       });
+      setCity("");
   };
 
   return (
@@ -33,6 +31,7 @@ const Index = () => {
       
       <div className="top-0 bottom-0 left-0 right-0 aboslute" />
       <Image
+      alt="/"
         layout="fill"
         src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&dpr=1"
         className="object-cover"

@@ -8,7 +8,7 @@ const Weather = ({ data }) => {
     <div className="relative">
       <div className="p-5 rounded-md bg-white/20">
         <h1 className="mt-5 text-2xl font-bold text-center text-black/60 animate-pulse">
-          {data.name}
+          {/* {data.name} */}
         </h1>
         <div className="">
           <div className="flex items-center justify-between">
