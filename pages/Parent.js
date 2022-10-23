@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Weather from "./Weather";
+import Weather from "./components/Weather";
 import Image from "next/image";
 import { BsSearch } from "react-icons/bs";
 
