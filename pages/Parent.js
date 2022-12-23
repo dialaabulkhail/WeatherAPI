@@ -35,7 +35,6 @@ const Parent = () => {
     }).catch((error)=>{
       console.log(error)
     })
-    console.log(weatherData);
   };
 
 
@@ -66,7 +65,7 @@ const Parent = () => {
       </div>
 
       <div className="relative">
-        {weatherData.main && <Weather data={weatherData} />}
+        {weatherData?.main && <Weather data={weatherData} />}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 const Weather = ({ data }) => {
-
+console.log(data)
   return (
     <div className="relative">
       <div className="p-5 rounded-md bg-white/20">
@@ -13,7 +13,7 @@ const Weather = ({ data }) => {
         <div className="">
           <div className="flex items-center justify-between">
             <Image
-              src={`https://openweathermap.org/img/wn/${data.weather[0]?.icon}@2x.png`}
+              src={`https://openweathermap.org/img/wn/${data?.weather[0]?.icon}@2x.png`}
               alt="/"
               width={100}
               height={100}
@@ -29,7 +29,7 @@ const Weather = ({ data }) => {
               <span className="font-bold"> {data?.main?.feels_like}°C </span>
             </div>
             <div className="p-8 m-1 duration-150 ease-in-out bg-white/60 hover:scale-105 rounded-xl">
-              {data.weather[0]?.description}
+              {data?.weather[0]?.description}
             </div>
             <div className="p-8 m-1 duration-150 ease-in-out bg-white/60 hover:scale-105 rounded-xl">
               Wind speed <span className="font-bold">{data?.wind?.speed}m/s</span>
